@@ -3,19 +3,22 @@
         <div class="row no-gutters">
             <fieldset>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> 
+                  <label>User name</label>
+                  <input type="text" class="form-control" ng-model=""> 
                 </div>
                 <div class="form-group">
                   <label >Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control" ng-model="">
                 </div>
               </fieldset>
         </div>
         <div class="row justify-content-end no-gutters" >
-            <button type="button" class="btn btn-primary">Log in</button>
+            <button type="submit" class="btn btn-primary"  >Log in</button>
         
         </div>
       </form>
+      <ul  *ngFor="let user of users" >
+        <li>{{user.userName}}</li>
+      </ul>
 </div>
 

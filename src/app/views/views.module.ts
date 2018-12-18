@@ -8,13 +8,16 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [NavBarComponent, MainContentComponent, SideBarComponent, LoginComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     NavBarComponent,
     MainContentComponent,
     SideBarComponent,
     LoginComponent
+  ],
+  providers: [
   ]
+
 })
 export class ViewsModule { }

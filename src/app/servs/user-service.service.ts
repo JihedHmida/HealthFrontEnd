@@ -12,6 +12,12 @@ export class UserServiceService {
   http: HttpClient;
 
   Getusers() {
+<<<<<<< HEAD
 
   }
+=======
+    this.http.
+  }
+  
+>>>>>>> master
 }
