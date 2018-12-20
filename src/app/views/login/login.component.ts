@@ -10,11 +10,16 @@ import { User } from '../../dto/user';
 })
 export class LoginComponent implements OnInit {
 
-  public users = [];
-  constructor(private svc: UserService) { }
+  user: User = new User() ;
+  users: User[];
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.svc.getAllUsers().subscribe( data => this.users = data);
+  }
+  createUser() {
+    this.userService.getuser(this.user).subscribe((respons) => console.log(respons.userId));
+    // this.userService.addUser(this.user).subscribe();
+    // this.userService.getAllUsers().subscribe((respons) => this.users = respons);
   }
 
 }

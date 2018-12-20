@@ -1,24 +1,29 @@
 <div class="container" style="max-width: 300px">
-    <form>
-        <div class="row no-gutters">
-            <fieldset>
-                <div class="form-group">
-                  <label>User name</label>
-                  <input type="text" class="form-control" ng-model=""> 
-                </div>
-                <div class="form-group">
-                  <label >Password</label>
-                  <input type="password" class="form-control" ng-model="">
-                </div>
-              </fieldset>
-        </div>
-        <div class="row justify-content-end no-gutters" >
-            <button type="submit" class="btn btn-primary"  >Log in</button>
-        
-        </div>
-      </form>
-      <ul  *ngFor="let user of users" >
-        <li>{{user.userName}}</li>
-      </ul>
+  <form>
+      <div class="row no-gutters">
+          <fieldset>
+              <div class="form-group">
+                <label>User name</label>
+                <input type="text" class="form-control" [(ngModel)]="user.userName"name="user">
+              </div>
+              <div class="form-group">
+                <label >Password</label>
+                <input type="password" class="form-control" [(ngModel)]="user.userPwd"name="password">
+              </div>
+            </fieldset>
+      </div>
+      <div class="row justify-content-end no-gutters" >
+          <button type="submit" class="btn btn-primary"  (click)="createUser()">Log in</button>
+      
+      </div>
+    </form>
+    <div *ngIf="users" >
+     <ul *ngFor="let user of users ">
+       <li>{{user.userName}}</li>
+     </ul>
+    </div>
+    
+    <p >{{ user.userName }}</p>
+    <p >{{ user.userPwd }}</p>
 </div>
 
