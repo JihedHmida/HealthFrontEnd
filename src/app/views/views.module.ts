@@ -5,8 +5,9 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { LoginComponent } from './login/login.component';
 
+
 @NgModule({
-  declarations: [NavBarComponent, MainContentComponent, SideBarComponent, LoginComponent],
+  declarations: [NavBarComponent, MainContentComponent, SideBarComponent],
   imports: [
     CommonModule,
   ],
