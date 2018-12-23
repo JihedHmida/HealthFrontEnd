@@ -21,10 +21,7 @@ export class UserService {
     return this.http.post<User>('http://localhost:8080/user/add', user, httpOptions);
   }
 
-
-
-
-  getuser (user: User): Observable<User> {
+  getUser (user: User): Observable<User> {
     return this.http.post<User>('http://localhost:8080/user', user, httpOptions);
   }
 

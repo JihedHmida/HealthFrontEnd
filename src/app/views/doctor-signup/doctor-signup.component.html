@@ -1,0 +1,42 @@
+<div class="container">
+  <form>
+    <div class="row no-gutters" >
+
+          <div class="col">
+              <div class="form-group" style="max-width: 300px;">
+
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" placeholder="Enter email" [(ngModel)]="doctor.email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                <label>Enter password</label>
+                <input type="password" class="form-control" [(ngModel)]="user.userPwd" name="pwd">
+
+                <label for="exampleInputEmail1">First name</label>
+                <input type="email" class="form-control" [(ngModel)]="doctor.firstName" name="fname">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                <label for="exampleInputEmail1">Last name</label>
+                <input type="email" class="form-control" [(ngModel)]="doctor.lastName" name="lname">
+
+              </div>
+          </div>
+
+          <div class="col">
+              <div class="form-group" style="max-width: 300px;">
+
+                  <label for="exampleInputEmail1">Cnam code</label>
+                  <input type="email" class="form-control" [(ngModel)]="doctor.cnam" name="cnam">
+                  
+                  <label >Birth date:</label>
+                  <input type="date" class="form-control">
+                  
+                  <label>Phone number</label>
+                  <input type="text" class="form-control" [(ngModel)]="doctor.phone" name="phone" >
+              </div>
+              <button type="submit" class="btn btn-primary" (click)="createDoctor()">Submit</button>
+            </div>
+    </div>
+  </form>
+  <p>user Id: {{ user.userId }} doctor last name: {{ doctor.lastName }} </p>
+</div>

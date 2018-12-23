@@ -1,5 +1,11 @@
 export class User {
-    userId: number;
-    userName: string;
-    userPwd: string;
+    public userId: number;
+    public userName: string;
+    public userPwd: string;
+    public isAdmin: boolean;
+
+    public constructor(name?: string, pwd?: string) {
+        this.userName = name;
+        this.userPwd = pwd;
+    }
 }

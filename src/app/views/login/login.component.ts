@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   createUser() {
-    this.userService.getuser(this.user).subscribe((respons) => console.log(respons.userId));
+    this.userService.getUser(this.user).subscribe();
     // this.userService.addUser(this.user).subscribe();
     // this.userService.getAllUsers().subscribe((respons) => this.users = respons);
   }
