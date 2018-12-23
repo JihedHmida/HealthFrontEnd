@@ -19,9 +19,17 @@
         <a class="nav-link" href="#">About</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+
+    <form class="form-inline my-2 my-lg-0" *ngIf="user">
+
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <form class="form-inline my-2 my-lg-0">
+      <button type="button" class="btn btn-secondary" style="margin-right: 5px">Log in</button>
+      <button type="button" class="btn btn-secondary">Sign up</button>
+    </form>
+
+    
   </div>
 </nav>
