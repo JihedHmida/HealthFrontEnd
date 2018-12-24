@@ -14,7 +14,7 @@
 
                 <label for="exampleInputEmail1">First name</label>
                 <input type="email" class="form-control" [(ngModel)]="doctor.firstName" name="fname">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small class="form-text text-muted" *ngIf="errorz">{{ errorz.firstName }}</small>
 
                 <label for="exampleInputEmail1">Last name</label>
                 <input type="email" class="form-control" [(ngModel)]="doctor.lastName" name="lname">

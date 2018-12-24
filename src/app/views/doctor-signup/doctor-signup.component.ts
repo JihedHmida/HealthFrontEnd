@@ -12,6 +12,7 @@ export class DoctorSignupComponent implements OnInit {
 
   public doctor: Doctor;
   public user: User;
+  errorz: any;
 
   constructor(private doctorService: DoctorService) { }
 
@@ -25,10 +26,11 @@ export class DoctorSignupComponent implements OnInit {
     this.doctor.user = this.user;
     this.doctorService.addDoctor(this.doctor).subscribe(
       data => {
-        console.log(this.doctor);
+        console.log(data);
       },
-      error => {
-        console.error(error);
+      errorx => {
+        this.errorz = errorx['firstName'];
+          console.log(this.errorz);
       }
 
 

@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
     this.userService.getUser(this.user).subscribe((userx => this.user = userx));
     if (!this.user.userId) {
       alert('wrong login or password ');
-      
     }
   }
 
