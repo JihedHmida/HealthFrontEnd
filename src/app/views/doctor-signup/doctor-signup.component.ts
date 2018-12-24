@@ -23,7 +23,16 @@ export class DoctorSignupComponent implements OnInit {
   createDoctor() {
     this.user.userName = this.doctor.email;
     this.doctor.user = this.user;
-    this.doctorService.addDoctor(this.doctor).subscribe();
+    this.doctorService.addDoctor(this.doctor).subscribe(
+      data => {
+        console.log(this.doctor);
+      },
+      error => {
+        console.error(error);
+      }
+
+
+    );
   }
 
 }
