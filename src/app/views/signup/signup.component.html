@@ -1,0 +1,16 @@
+<div class="form-group" style="max-width:300px; ">
+  <select class="custom-select" [(ngModel)] ="profile">
+    <option  >doctor</option>
+    <option >patient</option>  
+  </select>
+</div>
+
+<div class="content" *ngIf="profile == 'doctor'" style="margin:5px;border-top: 1px solid #255599">
+  <br>
+  <app-doctor-signup></app-doctor-signup>
+</div>
+
+<div class="content" *ngIf="profile == 'patient'" style="margin:5px;border-top: 1px solid #255599">
+  <br>
+  <app-patient-signup></app-patient-signup>
+</div>

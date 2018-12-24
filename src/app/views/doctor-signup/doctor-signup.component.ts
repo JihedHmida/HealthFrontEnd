@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Doctor } from 'src/app/dto/doctor';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { User } from 'src/app/dto/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-signup',
@@ -13,7 +14,7 @@ export class DoctorSignupComponent implements OnInit {
   public doctor: Doctor;
   public user: User;
 
-  constructor(private doctorService: DoctorService) { }
+  constructor(private doctorService: DoctorService, private router: Router) { }
 
   ngOnInit() {
     this.doctor = new Doctor();
@@ -25,14 +26,11 @@ export class DoctorSignupComponent implements OnInit {
     this.doctor.user = this.user;
     this.doctorService.addDoctor(this.doctor).subscribe(
       data => {
-        console.log(this.doctor);
+        console.log(data);
       },
-      error => {
-        console.error(error);
-      }
-
-
+      error => console.log(error )
     );
+    this.router.navigate(['/home']);
   }
 
 }

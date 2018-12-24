@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../dto/user';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,18 +11,21 @@ import { User } from '../../dto/user';
 })
 export class LoginComponent implements OnInit {
 
-  user: User = new User() ;
-  users: User[];
-  constructor(private userService: UserService) { }
+  @Input() user = new User();
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
   getUser() {
-    this.userService.getUser(this.user).subscribe((userx => this.user = userx));
-    if (!this.user.userId) {
+    this.userService.getUser(this.user).subscribe((userx) => {
+      this.user = userx;
+      if (!this.user.userId) {
       alert('wrong login or password ');
-      
-    }
+      this.router.navigate(['/login']);
+      } else {
+      this.router.navigate(['/home']);
+      }
+    });
   }
 
 }
