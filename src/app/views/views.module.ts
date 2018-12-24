@@ -7,13 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { DoctorSignupComponent } from './doctor-signup/doctor-signup.component';
 import { PatientSignupComponent } from './patient-signup/patient-signup.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [NavBarComponent, MainContentComponent, SideBarComponent, LoginComponent, DoctorSignupComponent, PatientSignupComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: [
     NavBarComponent,

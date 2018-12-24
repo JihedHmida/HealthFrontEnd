@@ -16,10 +16,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  createUser() {
-    this.userService.getUser(this.user).subscribe();
-    // this.userService.addUser(this.user).subscribe();
-    // this.userService.getAllUsers().subscribe((respons) => this.users = respons);
+  getUser() {
+    this.userService.getUser(this.user).subscribe((userx => this.user = userx));
+    if (!this.user.userId) {
+      alert('wrong login or password ');
+      
+    }
   }
 
 }
