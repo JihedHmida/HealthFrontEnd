@@ -6,14 +6,17 @@
 
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" placeholder="Enter email" [(ngModel)]="patient.email" name="email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small class="form-text text-danger" *ngIf="patientError">{{ patientError.email }} </small>
+                <small class="form-text text-danger " *ngIf="patientExist"> An account already exists with this email  
+                <a routerLink="/login>"> Click here to Login</a>
+                </small>
 
                 <label>Enter password</label>
                 <input type="password" class="form-control" [(ngModel)]="user.userPwd" name="pwd">
 
                 <label for="exampleInputEmail1">First name</label>
                 <input type="email" class="form-control" [(ngModel)]="patient.firstName" name="fname">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small class="form-text text-danger" *ngIf="patientError">{{ patientError.firstName }} </small>
 
                 <label for="exampleInputEmail1">Last name</label>
                 <input type="email" class="form-control" [(ngModel)]="patient.lastName" name="lname">
@@ -26,12 +29,15 @@
 
                   <label for="exampleInputEmail1">Cnam code</label>
                   <input type="email" class="form-control" [(ngModel)]="patient.cnam" name="cnam">
+                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.publicCode }} </small>
                   
                   <label >Birth date:</label>
                   <input type="date" class="form-control">
+                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.publicCode }} </small>
                   
                   <label>Phone number</label>
                   <input type="text" class="form-control" [(ngModel)]="patient.phone" name="phone" >
+                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.publicCode }} </small>
               </div>
               <button type="submit" class="btn btn-primary" (click)="createPatient()">Submit</button>
             </div>

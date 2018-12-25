@@ -12,13 +12,15 @@ export class DoctorSignupComponent implements OnInit {
 
   public doctor: Doctor;
   public user: User;
-  errorz: any;
+  private doctorError: Doctor;
+  private doctorExist: Boolean;
 
   constructor(private doctorService: DoctorService) { }
 
   ngOnInit() {
     this.doctor = new Doctor();
     this.user = new User();
+    this.doctorExist = false ;
   }
 
   createDoctor() {
@@ -28,12 +30,12 @@ export class DoctorSignupComponent implements OnInit {
       data => {
         console.log(data);
       },
-      errorx => {
-        this.errorz = errorx['firstName'];
-          console.log(this.errorz);
+      error => {
+        if (error.status === 409) {
+            this.doctorExist = true ;
+        }
+          this.doctorError = error.error;
       }
-
-
     );
   }
 

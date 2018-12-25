@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  profile ;
+  profile = 'doctor' ;
   constructor() { }
 
   ngOnInit() {

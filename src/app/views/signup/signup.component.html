@@ -1,9 +1,10 @@
 <div class="form-group" style="max-width:300px; ">
-  <select class="custom-select" [(ngModel)] ="profile">
-    <option  >doctor</option>
+  <select class="custom-select" [(ngModel)] ="profile" name="profile">
+    <option >doctor</option>
     <option >patient</option>  
   </select>
 </div>
+
 
 <div class="content" *ngIf="profile == 'doctor'" style="margin:5px;border-top: 1px solid #255599">
   <br>
