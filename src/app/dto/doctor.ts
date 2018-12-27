@@ -1,6 +1,7 @@
 import { User } from './user';
 
 export class Doctor {
+    public id: number;
     public firstName: string;
     public lastName: string;
     public publicCode: string;

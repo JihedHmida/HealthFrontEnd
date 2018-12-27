@@ -14,7 +14,6 @@ export class AppComponent implements OnDestroy {
   sub: Subscription;
   constructor(private session: SessionService) {
     this.sub = this.session.getLoggedUser().subscribe(userx => this.loggedUser = userx);
-
   }
 
   ngOnDestroy() {
