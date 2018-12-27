@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/dto/user';
-import { LoginComponent } from '../login/login.component';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,11 +10,14 @@ import { LoginComponent } from '../login/login.component';
 })
 export class NavBarComponent implements OnInit {
 
-
-  user: User;
-  constructor() { }
+  @Input() user: User;
+  constructor(private session: SessionService, private userService: UserService) { }
 
   ngOnInit() {
+
+  }
+  logout() {
+    this.session.clearLoggedUser();
   }
 
 }

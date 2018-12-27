@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../dto/user';
 import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/session.service';
 
 
 @Component({
@@ -11,8 +12,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  @Input() user = new User();
-  constructor(private userService: UserService, private router: Router) { }
+  user = new User();
+  constructor(private userService: UserService, private router: Router, private session: SessionService) { }
 
   ngOnInit() {
   }
@@ -23,7 +24,9 @@ export class LoginComponent implements OnInit {
       alert('wrong login or password ');
       this.router.navigate(['/login']);
       } else {
+      this.session.setLoggedUser(this.user);
       this.router.navigate(['/home']);
+
       }
     });
   }

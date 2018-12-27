@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { User } from 'src/app/dto/user';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-main-content',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+  constructor(private session: SessionService) { }
 
   ngOnInit() {
+    this.user = this.session.getUser();
   }
 
 }

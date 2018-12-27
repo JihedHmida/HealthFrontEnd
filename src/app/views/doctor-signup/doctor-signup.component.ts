@@ -3,6 +3,7 @@ import { Doctor } from 'src/app/dto/doctor';
 import { DoctorService } from 'src/app/services/doctor.service';
 import { User } from 'src/app/dto/user';
 import { Router } from '@angular/router';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-doctor-signup',
@@ -16,7 +17,7 @@ export class DoctorSignupComponent implements OnInit {
   private doctorError: Doctor;
   private doctorExist: Boolean;
 
-  constructor(private doctorService: DoctorService, private router: Router) { }
+  constructor(private doctorService: DoctorService, private router: Router, private session: SessionService) { }
 
   ngOnInit() {
     this.doctor = new Doctor();
@@ -38,6 +39,7 @@ export class DoctorSignupComponent implements OnInit {
           this.doctorError = error.error;
       }
     );
+    this.session.setLoggedUser(this.user);
     this.router.navigate(['/home']);
   }
 
