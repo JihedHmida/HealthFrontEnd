@@ -29,15 +29,14 @@
 
                   <label for="exampleInputEmail1">Cnam code</label>
                   <input type="email" class="form-control" [(ngModel)]="patient.cnam" name="cnam">
-                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.publicCode }} </small>
+                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.cnam }} </small>
                   
-                  <label >Birth date:</label>
-                  <input type="date" class="form-control">
-                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.publicCode }} </small>
-                  
+                  <label >Birth date {{patient.birthDate | date:'dd-MM-yyyy'}}:</label>
+                  <input type="date" class="form-control" [(ngModel)]="patient.birthDate" name="birthDate">
+                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.birthDate }} </small>
                   <label>Phone number</label>
                   <input type="text" class="form-control" [(ngModel)]="patient.phone" name="phone" >
-                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.publicCode }} </small>
+                  <small class="form-text text-danger" *ngIf="patientError">{{ patientError.phone }} </small>
               </div>
               <button type="submit" class="btn btn-primary" (click)="createPatient()">Submit</button>
             </div>
