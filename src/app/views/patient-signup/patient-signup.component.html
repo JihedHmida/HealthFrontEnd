@@ -31,7 +31,7 @@
                   <input type="email" class="form-control" [(ngModel)]="patient.cnam" name="cnam">
                   <small class="form-text text-danger" *ngIf="patientError">{{ patientError.cnam }} </small>
                   
-                  <label >Birth date {{patient.birthDate | date:'dd-MM-yyyy'}}:</label>
+                  <label >Birth date:</label>
                   <input type="date" class="form-control" [(ngModel)]="patient.birthDate" name="birthDate">
                   <small class="form-text text-danger" *ngIf="patientError">{{ patientError.birthDate }} </small>
                   <label>Phone number</label>

@@ -32,7 +32,7 @@
                   <label for="exampleInputEmail1">Cnam code</label>
                   <input type="email" class="form-control" [(ngModel)]="doctor.publicCode" name="cnam">
                   <small class="form-text text-danger" *ngIf="doctorError">{{ doctorError.publicCode }} </small>
-                  <label >Birth date {{doctor.birthDate | date:'dd-MM-yyyy'}}:</label>
+                  <label >Birth date:</label>
                   <input type="date"  class="form-control" [(ngModel)]="doctor.birthDate" name="birthDate">
                   <small class="form-text text-danger" *ngIf="doctorError">{{ doctorError.birthDate }} </small>
                   <label>Phone number</label>

@@ -10,11 +10,12 @@ import { PatientSignupComponent } from './patient-signup/patient-signup.componen
 import { RouterModule } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
 import { ConsultationComponent } from './consultation/consultation.component';
+import { ConsultationlistComponent } from './consultationlist/consultationlist.component';
 
 
 @NgModule({
   declarations: [NavBarComponent, MainContentComponent, SideBarComponent, LoginComponent,
-     DoctorSignupComponent, PatientSignupComponent, SignupComponent, ConsultationComponent],
+     DoctorSignupComponent, PatientSignupComponent, SignupComponent, ConsultationComponent, ConsultationlistComponent],
   imports: [
     CommonModule,
     FormsModule,

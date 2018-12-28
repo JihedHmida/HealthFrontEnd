@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table table-striped">
+<thead>
+  <th> Consultation Date </th>
+  <th>Consultation Note</th>
+  <th> Doctor Name</th>
+  <th> Patient Name </th>
+</thead>
+<tbody>
+  <tr *ngFor="let consultation of consultations">
+    <td>{{consultation.date | date:"dd-MM-yyyy  'at'  HH:mm"}}</td>
+    <td>{{consultation.note}}</td>
+    <td>{{consultation.doctor.firstName}}</td>
+    <td>{{consultation.patient.firstName}}</td>
+
+
+  </tr>
+</tbody>
+</table>
+
+
+</div>
