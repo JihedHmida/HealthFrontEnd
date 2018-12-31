@@ -5,6 +5,7 @@
   <th>Consultation Note</th>
   <th> Doctor Name</th>
   <th> Patient Name </th>
+  <button class="btn btn-primary"(click)="createConsultation()">Create Consultatation</button>
 </thead>
 <tbody>
   <tr *ngFor="let consultation of consultations">
@@ -12,11 +13,16 @@
     <td>{{consultation.note}}</td>
     <td>{{consultation.doctor.firstName}}</td>
     <td>{{consultation.patient.firstName}}</td>
-
+    <td>
+      <button class="btn btn-danger"(click)="deleteConsultation(consultation)">Delete</button>
+      <button class="btn btn-primary"(click)="updateConsultation(consultation)">Update</button>
+    </td>
 
   </tr>
 </tbody>
 </table>
+
+
 
 
 </div>

@@ -13,6 +13,8 @@ const httpOptions = {
 })
 export class ConsultationService {
 
+  private consultation: Consultation = new Consultation();
+
   private base_url = 'http://localhost:8080/consultation/';
   constructor(private http: HttpClient) { }
 
@@ -25,17 +27,32 @@ export class ConsultationService {
   }
 
 
-  findConsultationByID(id) {
+  findConsultationByID(id: number) {
     return this.http.get(this.base_url + id + httpOptions );
   }
 
 
-  getConsultationsByDoctorId(id) {
+  getConsultationsByDoctorId(id: number) {
     return this.http.get(this.base_url + 'doctor' + id , httpOptions );
   }
 
-  getConsultationsByPatientId(id) {
+  getConsultationsByPatientId(id: number) {
     return this.http.get(this.base_url + 'patient' + id , httpOptions );
+  }
+
+  deleteConsultation(id: number ) {
+    return this.http.delete(this.base_url + id , httpOptions);
+  }
+
+  updateConsultation(consultation: Consultation): Observable<Consultation> {
+    return this.http.put<Consultation>(this.base_url + consultation.id , consultation , httpOptions );
+  }
+
+  consultationSetter(consultation: Consultation) {
+    this.consultation = consultation;
+  }
+  consultationGetter() {
+    return this.consultation;
   }
 
 }
