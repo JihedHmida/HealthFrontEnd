@@ -13,11 +13,9 @@ const routes: Routes = [{ path: 'home', component: MainContentComponent },
                         { path: 'nav', component: NavBarComponent, outlet: 'navbar' },
                         { path: 'consultation', component: ConsultationComponent },
                         { path: 'consultationlist', component: ConsultationlistComponent},
-
-                        { path: '', redirectTo: '/consultation', pathMatch: 'full' },
+                        { path: '', redirectTo: '/home', pathMatch: 'full' },
                         { path: '', component: NavBarComponent, outlet: 'navbar'}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

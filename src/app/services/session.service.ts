@@ -1,13 +1,15 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { User } from '../dto/user';
 import { Subject, Observable } from 'rxjs';
+import { MainContentComponent } from '../views/main-content/main-content.component';
 @Injectable({
   providedIn: 'root'
 })
 export class SessionService implements OnInit {
 
+
   private loggedUser = new Subject<User>();
-  user;
+  private user;
   constructor() {}
 
   ngOnInit() {
@@ -26,8 +28,10 @@ export class SessionService implements OnInit {
   getUser(): User {
     return this.user;
   }
+
   clearLoggedUser() {
-    this.user = new User();
     this.loggedUser.next();
+    this.user = new User();
+
   }
 }

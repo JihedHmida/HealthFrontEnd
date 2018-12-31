@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Patient } from 'src/app/dto/patient';
 import { PatientService } from 'src/app/services/patient.service';
 import { User } from 'src/app/dto/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-patient-signup',
@@ -15,7 +16,7 @@ export class PatientSignupComponent implements OnInit {
   private patientError: Patient;
   private patientExist: Boolean;
 
-  constructor(private patientService: PatientService) { }
+  constructor(private patientService: PatientService, private router: Router) { }
 
   ngOnInit() {
     this.patient = new Patient();
@@ -28,7 +29,7 @@ export class PatientSignupComponent implements OnInit {
     this.patient.user = this.user;
     this.patientService.addPatient(this.patient).subscribe(
       data => {
-        console.log(data);
+        this.router.navigate(['/home']);
       },
       error => {
         if (error.status === 409) {

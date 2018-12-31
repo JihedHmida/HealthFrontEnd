@@ -30,7 +30,8 @@ export class DoctorSignupComponent implements OnInit {
     this.doctor.user = this.user;
     this.doctorService.addDoctor(this.doctor).subscribe(
       data => {
-        console.log(data);
+        this.session.setLoggedUser(this.user);
+        this.router.navigate(['/home']);
       },
       error => {
         if (error.status === 409) {
@@ -39,8 +40,6 @@ export class DoctorSignupComponent implements OnInit {
           this.doctorError = error.error;
       }
     );
-    this.session.setLoggedUser(this.user);
-    this.router.navigate(['/home']);
   }
 
 }
